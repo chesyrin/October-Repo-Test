@@ -17,6 +17,17 @@ public class Tests {
       System.out.print(eArray[i] + " ");
     }
     System.out.println();
+    
+    //testing sorting algorithms
+    int arr[] = {10, 7, 8, 9, 1, 5}; 
+    int n = arr.length; 
+    
+    Sorting ob = new Sorting(); 
+    ob.sort(arr, 0, n-1); 
+    
+    System.out.println("sorted array"); 
+    Sorting.printArray(arr); 
+    
   }
   
     /* duplicates (int[] origArray)
