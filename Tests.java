@@ -3,18 +3,41 @@
  * Just some coding challenges
  */
 public class Tests {
-  
-//  public Tests() { 
-//  }
+
   
   public static void main(String[] args) { 
     int[] array = {1,2,3,4,5,6,7};
+    
+    //testing duplicates 
+    System.out.println(duplicates(array));
+    
+    //testing rotate_Array
     int[] eArray = rotateArray(array, 3);
     for (int i = 0; i<array.length; i++){
-      System.out.println(eArray[i]);
+      System.out.print(eArray[i] + " ");
     }
-    
+    System.out.println();
   }
+  
+    /* duplicates (int[] origArray)
+   * if there are duplicates in an array, then return true
+   * 
+   * Test case:
+   * Input: [1,2,3,1]
+   * Output: true
+   */
+  private static boolean duplicates(int[] origArray){
+    Arrays.sort(origArray);
+    boolean fin = false;
+ 
+    
+    for (int i = 0; i< origArray.length - 1; i++){
+      if (origArray[i] == origArray[i+1]){
+        fin = true;
+      }
+    }
+    return fin;
+  }//end of method
   
   /* rotateArray(int[] origArray, int k)
    * Given an array, rotate the array to the right by k steps, 
@@ -25,7 +48,7 @@ public class Tests {
    * Output: [5,6,7,1,2,3,4]
    */
   
-  public static int[] rotateArray(int[] origArray, int k)
+  private static int[] rotateArray(int[] origArray, int k)
   {
     int[] editedArray = new int[origArray.length];
     
